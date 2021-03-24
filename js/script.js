@@ -24,16 +24,22 @@ cognomi.sort();
 console.log(cognomi);
 
 // scriviamo in che posizione della lista si trova (for)
-
-var position;
-
-for(i = 0; i < cognomi.length; i++) {
-    var thisCognome = i;
+for( var i = 0; i < cognomi.length; i++) {
     
-    position = cognomi.indexOf(mioCognome);
+    if( mioCognome === cognomi[i]) {
+        console.log((i + 1) + ' ' +  mioCognome);
+    }
     
 }
 
-alert(mioCognome + ' ' + (position + 1 ));
 
 // scriviamo in che posizione della lista si trova (while)
+var i = 0;
+while(i < cognomi.length) {
+    
+    if( mioCognome === cognomi[i]) {
+        console.log((i + 1) + ' ' +  mioCognome);
+    } 
+
+    i++;
+}
