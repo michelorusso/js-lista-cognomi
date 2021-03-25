@@ -19,27 +19,44 @@ cognomi.push(mioCognome);
 console.log(cognomi);
 
 
-// stampiamo la lista ordinata alfabeticamente
+// ordiniamo la lista alfabeticamente
 cognomi.sort();
 console.log(cognomi);
 
-// scriviamo in che posizione della lista si trova (for)
+// stampiamo la lista
+var posizioneUtente = -1;
 for( var i = 0; i < cognomi.length; i++) {
-    
+    var indiceCognomi = cognomi[i];
+
+    // scriviamo in che posizione della lista si trova (for)
     if( mioCognome === cognomi[i]) {
-        console.log((i + 1) + ' ' +  mioCognome);
-    }
+            posizioneUtente = i + 1;
+        }
+
+    // do alla variabile cognomiUl una stringa vuota collegata all'html
+    var cognomiUl = document.getElementById('cognomi').innerHTML;
+    // popoliamo la stringa vuota ad ogni ciclo
+    document.getElementById('cognomi').innerHTML = cognomiUl + '<li>' + indiceCognomi + '</li>';
+    // console.log(cognomiUl);
+    
+    // versione abbreviata
+    // document.getElementById('cognomi').innerHTML += '<li>' + indiceCognomi + '</li>';
     
 }
+
+document.getElementById('posizione').innerHTML = 'La tua posizione è : ' + posizioneUtente;
 
 
 // scriviamo in che posizione della lista si trova (while)
-var i = 0;
-while(i < cognomi.length) {
+var j = 0;
+
+while(j < cognomi.length) {
     
-    if( mioCognome === cognomi[i]) {
-        console.log((i + 1) + ' ' +  mioCognome);
+    if( mioCognome === cognomi[j]) {
+        posizioneUtente = j + 1;
     } 
 
-    i++;
+    j++;
 }
+
+document.getElementById('posizione-while').innerHTML = 'La tua posizione è : ' + posizioneUtente;
